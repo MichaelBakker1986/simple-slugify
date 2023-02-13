@@ -1,6 +1,6 @@
 {
   "name": "slug-web-friendly",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Out of the box slugify method",
   "main": "index.js",
   "type": "module",
