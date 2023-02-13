@@ -1,0 +1,29 @@
+{
+  "name": "slug-web-friendly",
+  "version": "0.0.1",
+  "description": "Out of the box slugify method",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelBakker1986/slug-web-friendly.git"
+  },
+  "keywords": [
+    "slugify",
+    "slug",
+    "slugger",
+    "slugify string",
+    "slugify string to url"
+  ],
+  "author": "Michael Bakker",
+  "license": "NONE",
+  "exports": {
+    "default": "./index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/MichaelBakker1986/slug-web-friendly/issues"
+  },
+  "homepage": "https://github.com/MichaelBakker1986/slug-web-friendly#readme"
+}
