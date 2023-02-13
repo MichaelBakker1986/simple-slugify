@@ -1,5 +1,6 @@
 declare function slugify(
-  string: string,
+    string: string
 ): string;
 
-export default slugify;
+export { slugify }
+export default slugify
