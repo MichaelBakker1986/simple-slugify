@@ -1,6 +1,6 @@
 // Slugify a string
 export function slugify(str) {
-	str = str.replace(/^\s+|\s+$/g, '')
+	str = str.replaceAll(/^\s+|\s+$/g, '')
 
 	// Make the string lowercase
 	str = str.toLowerCase()
@@ -13,11 +13,13 @@ export function slugify(str) {
 	}
 
 	// Remove invalid chars
-	str = str.replace(/[^a-z0-9 -]/g, '')
+	str = str.replaceAll(/[^a-z0-9 -]/g, '-')
 	// Collapse whitespace and replace by -
-	.replace(/\s+/g, '-')
+	.replaceAll(/\s+/g, '-')
 	// Collapse dashes
-	.replace(/-+/g, '-')
+	.replaceAll(/-+/g, '-')
+	// Trim - from start of text
+	.replace(/^-|-$/g, '')
 
 	return str
 }
