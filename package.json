@@ -2,14 +2,27 @@
   "name": "slug-web-friendly",
   "version": "0.0.3",
   "description": "Out of the box slugify method",
-  "main": "index.js",
-  "type": "module",
+  "main": "./index.mjs",
+  "module": "./dist/bundle.mjs",
   "scripts": {
-    "test": "test.js"
+    "build:esm": "rollup index.mjs --file ./dist/bundle-umd.js --f umd --name \"slugify\"",
+    "build:cjs": "rollup index.mjs --file ./dist/bundle.cjs --f cjs",
+    "build:es": "rollup index.mjs --file ./dist/bundle.mjs --f es",
+    "build:browser": "rollup index.mjs --file ./dist/bundle.js --f iife --name \"slugify\"",
+    "prepack": "npm run build:esm && npm run build:cjs && npm run build:es && npm run build:browser",
+    "test": "test.mjs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MichaelBakker1986/slug-web-friendly.git"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "slugify",
@@ -21,8 +34,26 @@
   "author": "Michael Bakker",
   "license": "NONE",
   "exports": {
-    "default": "./index.js"
+    "slugify": {
+      "import": {
+        "default": "./dist/bundle.mjs"
+      },
+      "require": {
+        "default": "./dist/bundle-umd.js"
+      }
+    },
+    "default": {
+      "import": {
+        "default": "./dist/bundle.mjs"
+      },
+      "require": {
+        "default": "./dist/bundle-umd.js"
+      }
+    }
   },
+  "files": [
+    "dist/*"
+  ],
   "bugs": {
     "url": "https://github.com/MichaelBakker1986/slug-web-friendly/issues"
   },

@@ -1,14 +1,15 @@
-// Slugify a string
-// Remove accents, swap ñ for n, etc
+/* A list of characters that will be replaced by the characters in the `to` string. */
 const from = 'ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆÍÌÎÏŇÑÓÖÒÔÕØŘŔŠŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇíìîïňñóöòôõøðřŕšťúůüùûýÿžþÞĐđßÆa·/_,:;'
 const to = 'AAAAAACCCDEEEEEEEEIIIINNOOOOOORRSTUUUUUYYZaaaaaacccdeeeeeeeeiiiinnooooooorrstuuuuuyyzbBDdBAa------'
 
+/* A string of characters that will be replaced by the characters in the `from` string. */
 function slugify(str) {
 	str = str
 	.replaceAll(/^\s+|\s+$/g, '')
 	// Make the string lowercase
 	.toLowerCase()
 
+	/* Replacing the characters in the `from` string with the characters in the `to` string. */
 	for (let i = 0, l = from.length; i < l; i++) {
 		str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i))
 	}
