@@ -1,8 +1,8 @@
 {
   "name": "slug-web-friendly",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Out of the box slugify method",
-  "main": "./dist/bundle.mjs",
+  "main": "./dist/bundle-umd.js",
   "module": "./dist/bundle.mjs",
   "scripts": {
     "build:esm": "rollup index.mjs --file ./dist/bundle-umd.js --f umd --name \"slugify\"",
