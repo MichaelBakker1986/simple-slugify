@@ -1,8 +1,8 @@
 {
   "name": "slug-web-friendly",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Out of the box slugify method",
-  "main": "./index.mjs",
+  "main": "./dist/bundle.mjs",
   "module": "./dist/bundle.mjs",
   "scripts": {
     "build:esm": "rollup index.mjs --file ./dist/bundle-umd.js --f umd --name \"slugify\"",
@@ -10,7 +10,7 @@
     "build:es": "rollup index.mjs --file ./dist/bundle.mjs --f es",
     "build:browser": "rollup index.mjs --file ./dist/bundle.js --f iife --name \"slugify\"",
     "prepack": "npm run build:esm && npm run build:cjs && npm run build:es && npm run build:browser",
-    "test": "test.mjs"
+    "test": "./test/test.mjs"
   },
   "repository": {
     "type": "git",
